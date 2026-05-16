@@ -368,14 +368,14 @@ struct sta_info {
  * have been received, the station will be disassociated after
  * AP_DISASSOC_DELAY seconds. Similarly, the station will be deauthenticated
  * after AP_DEAUTH_DELAY seconds has passed after disassociation. */
-#define AP_MAX_INACTIVITY (5 * 60)
-#define AP_DISASSOC_DELAY (3)
-#define AP_DEAUTH_DELAY (1)
+#define AP_MAX_INACTIVITY (60 * 60)
+#define AP_DISASSOC_DELAY (10)
+#define AP_DEAUTH_DELAY (5)
 /* Number of seconds to keep STA entry with Authenticated flag after it has
  * been disassociated. */
 #define AP_MAX_INACTIVITY_AFTER_DISASSOC (1 * 30)
 /* Number of seconds to keep STA entry after it has been deauthenticated. */
-#define AP_MAX_INACTIVITY_AFTER_DEAUTH (1 * 5)
+#define AP_MAX_INACTIVITY_AFTER_DEAUTH (2 * 5)
 
 
 int ap_for_each_sta(struct hostapd_data *hapd,
