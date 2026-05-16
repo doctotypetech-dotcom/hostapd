@@ -3,6 +3,7 @@
 echo "(1/7) Instalation des dépenadances"
 sudo apt-get install hostapd dnsmasq iptables-persistent -y
 cd /tmp
+rm -rf /tmp/hostap /tmp/temp || :
 
 echo "(2/7) Téléchargement de la bibliothèque hostapd"
 git clone https://git.w1.fi/hostap.git
@@ -35,6 +36,7 @@ sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 sudo iptables -A FORWARD -i eth0 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT
 sudo iptables -A FORWARD -i wlan0 -o eth0 -j ACCEPT
 sudo netfilter-persistent save
+sudo systemctl unmask hostapd || :
 sudo systemctl enable dnsmasq
 sudo systemctl enable hostapd
 
