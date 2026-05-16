@@ -9,7 +9,7 @@ git clone https://github.com/doctotypetech-dotcom/hostapd.git
 cd hostapd
 echo "Application des Fix"
 cp fix.h /tmp/hostapd/src/ap/sta_info.h
-cd /tmp/hostapd/hostapd
+cd /tmp/hostap/hostapd
 echo "Compilation"
 cp defconfig .config
 make
