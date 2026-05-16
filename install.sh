@@ -3,7 +3,7 @@
 echo "(1/7) Instalation des dépenadances"
 sudo apt-get install hostapd dnsmasq iptables-persistent -y
 cd /tmp
-rm -rf /tmp/hostap /tmp/temp || :
+rm -rf /tmp/hostap /tmp/temp /tmp/hostapd || :
 
 echo "(2/7) Téléchargement de la bibliothèque hostapd"
 git clone https://git.w1.fi/hostap.git
